@@ -1,0 +1,12 @@
+.user-skeleton-top {
+    display: flex ;
+    align-items: flex-start ;
+}
+
+.user-skeleton-right {
+    margin-left: 40px ;
+}
+
+.user-skeleton-bottom {
+    margin-top: 50px ;
+}

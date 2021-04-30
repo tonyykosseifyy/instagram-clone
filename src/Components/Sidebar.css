@@ -1,0 +1,19 @@
+.sidebar {
+    position: fixed ;
+    top: 95px ;
+    bottom: 0 ;
+    right: 40px;
+    padding: 10px 15px ;
+}
+
+.sidebar > h3 {
+    color: #a3a1a1 ;
+    font-size: 18px ;
+    font-weight: 600 ;
+}
+
+@media screen and (max-width: 1150px) {
+    .sidebar {
+        display: none ;
+    }
+}

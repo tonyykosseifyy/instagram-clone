@@ -1,0 +1,152 @@
+.user-profile {
+    padding: 25px 15vw ;
+}
+
+.user-profile-top {
+    display: flex ;
+    align-items: flex-start ;
+}
+
+.user-profile-top > .user-profile-image {
+    width: 180px ;
+    height: 180px ;
+}       
+
+.user-profile-top-right {
+    margin-left: 50px ;
+}
+
+.user-top-info {
+    display: flex ;
+    align-items: center ; 
+}
+.user-top-info > h1 {
+    color: #535353 ;
+    font-weight: lighter ;
+    font-size: 2rem ;
+}
+.user-top-info .MuiButton-root {
+    background-color: #3AACF7 ;
+    font-weight: bold ;
+    text-transform: none ;
+    font-size: 15px ;
+    color: white ;
+    margin: 0 5px ;
+    width: 120px ;
+    height: 35px ;
+}
+
+.user-top-info > div > .MuiButton-root:nth-child(2) {
+    width: 20px ;
+}
+.user-top-info > div {
+    margin-left: 20px ;
+    margin-top: 10px ;
+    display:flex ;
+    align-items: center ;
+}
+.user-top-info .MuiButton-root:hover {
+    background-color: #3AACF7 ;
+    color: white ;
+    box-shadow: 2px 2px 10px rgb(165, 163, 163) ;
+}
+.user-top-info  .MuiButton-root:focus {
+    background-color: #3AACF7 ;
+    color: white ;
+}
+.user-description {
+    margin: 40px 0 ;
+}
+.user-description > ul {
+    list-style-type: none ;
+}
+
+.user-description > ul > li {
+    margin: 6px 0 ;
+    font-weight: 400 ;
+}
+.user-description > ul > li > strong {
+    font-size: 15px ;
+    margin-right: 5px ;
+}
+.user-profile-bar {
+    width: 100% ;
+    height: 1px ;
+    background-color: #DBDBDB ;
+    margin: 40px 0 ;
+}
+.user-profile-posts {
+    max-width: 100vw ;
+    display: grid ;
+    grid-template-columns: repeat(3 , 1fr) ;
+    grid-column-gap: 20px ;
+    grid-row-gap: 20px ;
+}
+.user-profile-posts > .post-container {
+    width: 100% ;
+    height: 100% ;
+    position: relative ;
+    cursor: pointer ;
+}
+.user-profile-posts > .post-container > img {
+    height: 100% ;
+    width: 100% ;
+    object-fit: cover ;
+}
+
+.post-overlay {
+    position: absolute ;
+    top: 0 ;
+    right: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    background-color: rgba(0 ,0 , 0 , 0) ;
+    transition: .3s ease-out ;
+    -webkit-transition: .3s ease-out ;
+    -moz-transition: .3s ease-out ;
+    -ms-transition: .3s ease-out ;
+    -o-transition: .3s ease-out ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    opacity: 0 ;
+}
+.post-overlay > div {
+    display: flex ;
+    align-items: center ;
+}
+.user-profile-posts > .post-container:hover .post-overlay {
+    background-color: rgba(0 ,0 , 0 , .5) ;
+    opacity: 1 ;
+}
+@media screen and (max-width: 1024px) {
+    .user-profile {
+        padding: 10px 5vw ;
+    }
+    .user-profile-top > .user-profile-image {
+        width: 150px ;
+        height: 150px ;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .user-profile {
+        padding: 0;
+    }
+    .user-top-info {
+        flex-direction: column ;
+        align-items: flex-start ;
+    }
+    .user-top-info > div {
+        margin-top: 20px ;
+        margin-left: -10px  ;
+    }
+    .user-profile-top > .user-profile-image {
+        width: 100px ;
+        height: 100px ;
+    }
+    .user-profile-top {
+        padding: 20px 10px ;
+    }
+
+}

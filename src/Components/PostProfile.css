@@ -1,0 +1,155 @@
+.post-profile {
+    position: fixed ;
+    top: 0 ;
+    right: 0 ;
+    left: 0 ;
+    background-color: rgba(0 , 0 , 0 , .6) ;
+    z-index: 1000000 ;
+    width: 100vw ;
+    height: 100vh ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    text-wrap: wrap ;
+}
+
+.post-profile > .MuiSvgIcon-root {
+    position: absolute; 
+    top: 20px ;
+    right: 35px ;
+    color: white ;
+    font-size: 2.5rem ;
+    cursor: pointer ;
+}
+
+.post-profile-post {
+    display: flex; 
+}
+
+.post-profile-post > img {
+    object-fit: contain ;
+    height: auto ;
+    width: auto ;
+    max-height: 85vh ;
+    max-width: 50vw ;
+    flex: 100 ;
+    background: white ;
+}
+.post-profile-post-comment-section {
+    min-width: 25vw ;
+    padding: 20px 10px ; 
+    display: flex ;
+    flex-direction: column ;
+    padding-bottom: 0 ;
+    justify-content: space-evenly ;
+    max-width: 35vw ;
+}
+
+.post-profile-bar {
+    width: calc(100% + 20px ) ;
+    height: 1px ;
+    background-color: #DBDBDB ;
+    margin: 20px 0 ;
+    margin-left: -10px ;
+}
+.post-profile-user {
+    display: flex ;
+    align-items: center ;
+}
+.post-profile-user > strong {
+    margin-left: 10px ;
+    font-size: 15px ;
+    cursor:  pointer;
+}
+.post-profile-user > strong:hover {
+    text-decoration: underline ;
+}
+.post-profile-comment {
+    display: flex ;
+    align-items: flex-start ;
+    margin-bottom: 25px ;
+}
+.post-profile-comments {
+    overflow-x: hidden ;
+    overflow-y : auto ;
+    max-height: 250px;
+    flex: 100 ;
+}
+.post-profile-comments::-webkit-scrollbar {
+    width: 0 ;
+    background: transparent ;
+}
+.post-profile-comments::-webkit-scrollbar-thumb {
+    background: #FF0000
+}
+.post-profile-comment-text {
+    margin-left: 15px ;
+}
+.post-profile-comment-text > p {
+    font-weight: 500 ;
+    font-size: 15px ;
+    line-height: 18px ;
+    color: #262626 ;
+}
+.post-profile-comment-text > p strong {
+    cursor: pointer;
+    color: inherit ;
+    margin-right: 5px ;
+}
+.post-profile-link {
+    text-decoration: none ;
+    color: inherit ;
+}
+.post-profile-link:hover {
+    text-decoration: underline ;
+}
+
+.post-profile-comment-text span {
+    font-weight: 600 ;
+    color: #8e8e8e ;
+    font-size: 13px ;
+    line-height: 14px ;
+    margin-top: 10px ;
+    display: block
+}
+
+.post-profile-options {
+    display: flex ;
+    align-items: center ;
+    justify-content: space-between ;
+}
+
+.form-input {
+    width: calc(100% + 20px) ;
+    margin-left: -10px ;
+    height: 45px ;
+    display: flex ;
+    align-items: center ;
+}
+
+.form-input > input {
+    height: 100% ;
+    flex: 100 ;
+    border: none ;
+    outline: none ;
+}
+.form-input > button {
+    height: 100% ;
+    border: none ;
+    outline: none ;
+    background-color: transparent ;
+    color: #0F9Bf6 ;
+    padding: 0 10px ;
+    cursor: pointer ;
+    transition: .3s ease-in-out ;
+    -webkit-transition: .3s ease-in-out ;
+    -moz-transition: .3s ease-in-out ;
+    -ms-transition: .3s ease-in-out ;
+    -o-transition: .3s ease-in-out ;
+    font-weight: bold ;
+}
+.post-profile-options svg {
+    width: 25px ;
+    height: 25px ;
+}
+

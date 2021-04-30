@@ -1,0 +1,176 @@
+nav {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0.3px 0.3px grey;
+  padding: 0 9vw;
+  position: sticky ;
+  top: 0 ;
+  z-index: 10000 ;
+}
+
+.navbar-first {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.navbar-first > img {
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+}
+.navbar-first > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: text;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  width: 18vw;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navbar-first > form > div {
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+}
+
+
+.cover {
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  padding: 3px 0 ;
+  position: absolute;
+  top: 0 ;
+  left:0 ;
+  bottom: 0 ;
+  pointer-events: none ;
+  color: grey ;
+  transition: .3s ease-out ;
+  font-size: 15px ;
+  transition: .3s ease-out ;
+  transform: translateX(calc(9vw - 50% )) ;
+  animation-name: slideinlostfocus ;
+  animation-duration: .3s  ;
+  animation-timing-function: ease-out ;
+  animation-fill-mode: forwards;
+  -webkit-transition: .3s ease-out ;
+  -moz-transition: .3s ease-out ;
+  -ms-transition: .3s ease-out ;
+  -o-transition: .3s ease-out ;
+}
+.go {
+  animation-name : slidein ;
+  animation-duration: .3s  ;
+  animation-timing-function: ease-out ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideinlostfocus {
+  from {
+    transform: translateX(0) ;
+    opacity:0
+  }
+  100% {
+    transform: translateX(calc(9vw - 50% )) ;
+    opacity: 1 ;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(calc(9vw - 50% )) ;
+    opacity: 1 ;
+  }
+  100% {
+    transform: translateX(0) ;
+    opacity:0
+  }
+}
+
+.cover > span {
+  margin: 0 5px ;
+}
+.navbar-first > form > div > input {
+  border: none;
+  outline: none;
+  width: 2vw;
+  transition: width 0.3s ease-out;
+  padding: 0 5px;
+  min-height: 20px ; 
+  color: grey ;
+}
+
+.navbar-first > form > div > input.focused {
+  width: 14vw  ;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.close-search {
+  transition: color 0.3s ease-out;
+}
+.close-search:hover {
+  color: black !important ;
+}
+.nav-links .MuiSvgIcon-root {
+  cursor: pointer;
+  transform: scale(1.1); 
+  fill: inherit ;
+}
+.nav-links button {
+  margin-right: 2.8px ;
+}
+.ab {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FAFAFA;
+  border-radius: 2px ;
+  border: none ;
+  outline: none ;
+}
+.ab:focus {
+  display: none;
+  background : rgb(75, 74, 74) ;
+}
+.avatar {
+  transform: scale(0.87);
+  -webkit-transform: scale(0.87);
+  -moz-transform: scale(0.87);
+  -ms-transform: scale(0.87);
+  -o-transform: scale(0.87);
+}
+@media screen and (max-width: 1024px) {
+  .navbar-first > form > div > input.focused {
+    width: 12vw  ;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-links {
+    position: fixed ;
+    bottom: 0 ;
+    right: 0 ; 
+    left: 0 ;
+    width: 100% ;
+    justify-content: space-evenly ;
+    box-shadow: 0px -0.3px 0.3px grey;
+  }
+  .navbar-first > form {
+    display: none
+  }
+  nav {
+    padding: 0 ;
+  }
+}
+
