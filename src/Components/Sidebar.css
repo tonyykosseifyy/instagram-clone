@@ -4,6 +4,7 @@
     bottom: 0 ;
     right: 40px;
     padding: 10px 15px ;
+    width: calc(20% + 40px);
 }
 
 .sidebar > h3 {

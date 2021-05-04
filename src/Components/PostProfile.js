@@ -20,7 +20,8 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
     const [ postComments , setPostComments ] = useState([]) ;
     const [ reload , setReload ] = useState(false) ;
     const [ error , setError ] = useState(false)
-    const [ loading , setLoading ] = useState(false)
+    const [ loading , setLoading ] = useState(false) ;
+    const [ animation , setAnimation ] = useState(false)
     useEffect(() => {
         if ( !home ) {
             setPostComments(comments)
@@ -51,7 +52,7 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
                         firstName: 'Anonymous' ,
                         lastName: ''
                     } ,
-                    message: comment , 
+                    message: comment ,
                     publishDate : `${date.getFullYear()}-${date.getMonth().toString().length === 1 ? `0${date.getMonth()}` : date.getMonth()}-${date.getHours().toString().length === 1 ? `0${date.getHours()}` : date.getHours() }` ,
                 }
             ])
@@ -62,11 +63,19 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
         e.preventDefault()
         postComment()
     }
+    useEffect(() => {
+      if (postFocus) {
+        setAnimation(true)
+      }
+      else {
+        setAnimation(false)
+      }
+    }, [postFocus])
     console.log('comments in post profile' , comments) ;
     console.log('comments in state post profile' , postComments )
     if ( postFocus ) {
         return (
-        <div className='post-profile' >
+        <div className={`post-profile ${animation && 'animation-profile'}`} >
             <CloseIcon onClick={() => setPostFocus(null)} />
             <div className='post-profile-post'>
                 <img src={postFocus.image} alt={`${postFocus.text} image`} />
@@ -93,12 +102,12 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
                                     { !item.id ? <div style={{ alignItems: 'center' , display: 'flex'}}>
                                         <span>{item.publishDate}</span>
                                         <span onClick={() => deleteComment(index)} style={{display:'flex' , alignItems: 'center' , marginLeft: '10px' , cursor: 'pointer'}}><DeleteIcon style={{width: '18px' , height:'18px'}} /> delete</span>
-                                    </div> : 
+                                    </div> :
                                         <span>{item?.publishDate.slice(0 , 10)}</span>
                                     }
                                 </div>
                             </div>
-                        )) : 
+                        )) :
                         <p>No Comments Yet ! </p>}
                     </div>
                     <div className='post-profile-bar' style={{margin: '10px -10px '}}></div>
@@ -129,9 +138,9 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
             </div>
         </div>
     )} else {
-        return null 
+        return null
     }
-    
+
 } ;
 
 export default PostProfile ;
@@ -146,7 +155,7 @@ const postComment = () => {
                         firstName: 'Anonymous' ,
                         lastName: ''
                     } ,
-                    message: comment , 
+                    message: comment ,
                     publishDate : `${date.getFullYear()}-${date.getMonth().toString().length === 1 ? `0${date.getMonth()}` : date.getMonth()}-${date.getHours().toString().length === 1 ? `0${date.getHours()}` : date.getHours() }` ,
                 }
             ])

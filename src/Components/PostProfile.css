@@ -11,10 +11,15 @@
     align-items: center ;
     justify-content: center ;
     text-wrap: wrap ;
+    transform: scale(0);
+    transition: .4s ease-in-out ;
+    transition-delay: .2
 }
-
+.animation-profile {
+  transform: scale(1) ;
+}
 .post-profile > .MuiSvgIcon-root {
-    position: absolute; 
+    position: absolute;
     top: 20px ;
     right: 35px ;
     color: white ;
@@ -23,7 +28,7 @@
 }
 
 .post-profile-post {
-    display: flex; 
+    display: flex;
 }
 
 .post-profile-post > img {
@@ -37,7 +42,7 @@
 }
 .post-profile-post-comment-section {
     min-width: 25vw ;
-    padding: 20px 10px ; 
+    padding: 20px 10px ;
     display: flex ;
     flex-direction: column ;
     padding-bottom: 0 ;
@@ -152,4 +157,3 @@
     width: 25px ;
     height: 25px ;
 }
-

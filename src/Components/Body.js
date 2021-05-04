@@ -23,26 +23,27 @@ function Body() {
     const newUser = () => {
         setPostFocus(null)
     }
+
     return (
         <div className='body' style={{background : dark ? '#171717' : '#fafafa' , color: dark ? 'white' : 'black'}}>
             <PostProfile postFocus={postFocus} setPostFocus={setPostFocus} home newUser={newUser} />
             <main className='main-body'>
-               { !error ?  
-                   (!loading ) ? 
+               { !error ?
+                   (!loading ) ?
                     posts.map((item , index) => (
                         <Post key={index} post={item} setPostFocus={setPostFocus} />
                     ))
                    :
                     array.map((item , index) => (
                         <PostSkeleton key={index} />
-                    ))  
-                : 
+                    ))
+                :
                 <Fade>
                     Error loading posts , to fix this issue reload the page .
                 </Fade>
                 }
             </main>
-            
+
             <Sidebar />
         </div>
     )

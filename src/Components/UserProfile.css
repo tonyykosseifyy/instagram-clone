@@ -10,7 +10,7 @@
 .user-profile-top > .user-profile-image {
     width: 180px ;
     height: 180px ;
-}       
+}
 
 .user-profile-top-right {
     margin-left: 50px ;
@@ -18,7 +18,7 @@
 
 .user-top-info {
     display: flex ;
-    align-items: center ; 
+    align-items: center ;
 }
 .user-top-info > h1 {
     color: #535353 ;
@@ -76,10 +76,9 @@
     margin: 40px 0 ;
 }
 .user-profile-posts {
-    max-width: 100vw ;
     display: grid ;
     grid-template-columns: repeat(3 , 1fr) ;
-    grid-column-gap: 20px ;
+    grid-column-gap: 20px;
     grid-row-gap: 20px ;
 }
 .user-profile-posts > .post-container {
@@ -87,11 +86,15 @@
     height: 100% ;
     position: relative ;
     cursor: pointer ;
+    display: flex;
+    max-width: 400px ;
+    justify-content: flex-start;
 }
 .user-profile-posts > .post-container > img {
     height: 100% ;
     width: 100% ;
     object-fit: cover ;
+
 }
 
 .post-overlay {

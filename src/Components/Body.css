@@ -2,12 +2,15 @@
     padding: 5vh 12vw ;
     position: relative ;
     display: grid ;
-    grid-template-columns: 70% 30% ;
+      grid-template-columns: 75% calc(20% + 40px);
 
 }
 .main-body {
     min-height: 100vh ;
     min-width: 50vw ;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 1150px) {

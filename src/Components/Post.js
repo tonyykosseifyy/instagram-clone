@@ -12,10 +12,12 @@ import { IconButton } from "@material-ui/core";
 import { FaRegComment } from 'react-icons/fa' ;
 
 function Post({ post , setPostFocus }) {
+  const [ ps , setPs ] = useState(false) ;
+
     if ( post ) {
     return (
         <div className='post' >
-            <PostOwner>
+            <PostOwner padding='12px 10px'>
                 <Avatar src={post?.owner.picture} />
                 <strong>
                     <Link to={`/user/${post.owner.id}`} style={{ color: 'inherit'}} >
@@ -52,8 +54,8 @@ export default Post ;
 const PostOwner = styled.div`
     display: flex ;
     align-items: center ;
-    min-height: 40px; 
-    padding: 12px 10px ;
+    min-height: 40px;
+    padding: ${(props) => props.padding || 0 } ;
     & > strong {
         display: inline-block ;
         margin-left: 12px ;
@@ -64,7 +66,7 @@ const PostOwner = styled.div`
 `
 
 const PostOption = styled.div`
-    display: flex; 
+    display: flex;
     align-items: center ;
     width: 100% ;
     justify-content: space-between ;
