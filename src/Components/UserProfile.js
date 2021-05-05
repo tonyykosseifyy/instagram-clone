@@ -24,7 +24,7 @@ const postContainerFunction = (length) => {
     }
 }
 
-const UserProfile = () => {
+const UserProfile = ({setHidden}) => {
     const dark = useSelector(state => state.darkTheme) ;
     let { userId } = useParams() ;
     const [ user , setUser ] = useState() ;
@@ -52,6 +52,7 @@ const UserProfile = () => {
     const onPostClick = (item , index) => {
         setPostFocus(item) ;
         setChosenIndex(index)
+        setHidden((prev) => !prev)
     }
     const newUser = () => {
         setChosenIndex(null)

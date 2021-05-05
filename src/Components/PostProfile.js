@@ -130,7 +130,7 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
                     <form className='form-input' onSubmit={(e) => handleSubmit(e)}>
                         <InsertEmoticonIcon style={{height: '30px' , width: '30px' , margin :'0 10px '}} />
                         <input ref={textInput} style={{background: dark ? 'transparent' : 'inherit',color: dark ? 'white' : 'black'}} type='text' placeholder='Add a comment...' value={comment} onChange={(e) => setComment(e.target.value)} />
-                        <button style={{opacity: comment ? '1' : '.4'}}  >Post</button>
+                        <button style={{opacity: comment.trim() ? '1' : '.35', cursor: !comment.trim() ? 'not-allowed':'' }}  >Post</button>
                     </form>
 
                 </div>

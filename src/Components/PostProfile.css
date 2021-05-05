@@ -79,12 +79,25 @@
     max-height: 250px;
     flex: 100 ;
 }
+
+
+
 .post-profile-comments::-webkit-scrollbar {
-    width: 0 ;
-    background: transparent ;
+    width: 8px;
 }
 .post-profile-comments::-webkit-scrollbar-thumb {
-    background: #FF0000
+  background-color : #bdbdbd ;
+  border-radius: 10px;
+  transition: .3s ease-out ;
+}
+.post-profile-comments::-webkit-scrollbar-thumb:hover {
+  background-color:#7E7C86
+}
+
+.post-profile-comments::-webkit-scrollbar-track {
+  background-color: transparent ;
+  width :8px ;
+  border-radius: 10px ;
 }
 .post-profile-comment-text {
     margin-left: 15px ;
