@@ -107,8 +107,7 @@ const UserProfile = () => {
                 <div className='user-profile-top'>
                     <PostProfile newUser={newUser} postFocus={postFocus} setPostFocus={setPostFocus} comments={postsComments[chosenIndex]} />
                     <Avatar className='user-profile-image' src={user.picture} alt={`${user.firstName} ${user.lastName} picture`}  />
-                    <div className='user-profile-top-right'>
-                        <div className='user-top-info'>
+                      <div className='user-top-info'>
                             <h1 style={{color: dark ? 'white' : '#535353'}}>{`${user.firstName}_${user.lastName}`} </h1>
                             <div >
                                 <Button color='primary' >Follow</Button>
@@ -116,16 +115,15 @@ const UserProfile = () => {
                                     <ArrowDropDownIcon />
                                 </Button>
                             </div>
-                        </div>
-                        <div className='user-description'>
+                      </div>
+                      <div className='user-description'>
                             <ul>
                                 <li key={user.gender}><strong>gender </strong> {user.gender}</li>
                                 <li key={user.phone}><strong>phone number </strong>{user.phone}</li>
                                 <li key={user.email}><strong>email </strong>{user.email}</li>
                                 <li key={user.location.country}><strong>location </strong>{user.location.country} {user.location.city} {user.location.state}</li>
                             </ul>
-                        </div>
-                    </div>
+                      </div>
 
                 </div>
 

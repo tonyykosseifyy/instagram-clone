@@ -1,30 +1,38 @@
 .user-profile {
     padding: 25px 15vw ;
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
 }
 
 .user-profile-top {
-    display: flex ;
-    align-items: flex-start ;
+    display: grid ;
+    grid-template-rows: auto auto;
+    grid-template-columns: 240px auto ;
 }
-
+.user-profile-image {
+  grid-row: 1/3 ;
+  grid-column: 1/2 ;
+}
 .user-profile-top > .user-profile-image {
     width: 180px ;
     height: 180px ;
 }
 
-.user-profile-top-right {
-    margin-left: 50px ;
-}
 
 .user-top-info {
     display: flex ;
     align-items: center ;
+    grid-row: 1/2 ;
+    grid-column : 2/3 ;
 }
 .user-top-info > h1 {
     color: #535353 ;
     font-weight: lighter ;
     font-size: 2rem ;
+    margin-bottom: 0 ;
 }
+
 .user-top-info .MuiButton-root {
     background-color: #3AACF7 ;
     font-weight: bold ;
@@ -32,8 +40,8 @@
     font-size: 15px ;
     color: white ;
     margin: 0 5px ;
-    width: 120px ;
     height: 35px ;
+    padding: 3px 12px ;
 }
 
 .user-top-info > div > .MuiButton-root:nth-child(2) {
@@ -41,14 +49,12 @@
 }
 .user-top-info > div {
     margin-left: 20px ;
-    margin-top: 10px ;
     display:flex ;
     align-items: center ;
 }
 .user-top-info .MuiButton-root:hover {
     background-color: #3AACF7 ;
     color: white ;
-    box-shadow: 2px 2px 10px rgb(165, 163, 163) ;
 }
 .user-top-info  .MuiButton-root:focus {
     background-color: #3AACF7 ;
@@ -56,6 +62,8 @@
 }
 .user-description {
     margin: 40px 0 ;
+    grid-row: 2/3 ;
+    grid-column: 2/3 ;
 }
 .user-description > ul {
     list-style-type: none ;
@@ -121,7 +129,7 @@
     background-color: rgba(0 ,0 , 0 , .5) ;
     opacity: 1 ;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1070px) {
     .user-profile {
         padding: 10px 5vw ;
     }
@@ -129,9 +137,28 @@
         width: 150px ;
         height: 150px ;
     }
+    .user-profile-top {
+      grid-template-columns: 200px auto ;
+      min-width: 100% ;
+    }
+    .user-top-info > h1 {
+      font-size: 1.8rem ;
+    }
 
 }
-
+@media screen and (max-width: 800px ) {
+  .user-top-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-top-info > div {
+    margin-left: 0 ;
+    margin-top: 15px ;
+  }
+  .user-top-info > h1 {
+    font-size: 1.6rem ;
+  }
+}
 @media screen and (max-width: 700px) {
     .user-profile {
         padding: 0;
@@ -150,6 +177,20 @@
     }
     .user-profile-top {
         padding: 20px 10px ;
+    }
+    .user-description {
+      grid-row: 2/3 ;
+      grid-column: 1/3 ;
+    }
+    .user-profile-image {
+      grid-row: 1/2 ;
+    }
+    .user-profile-top {
+      grid-template-columns: 135px auto ;
+      padding: 20px ;
+    }
+    .user-top-info > h1 {
+      font-size: 1.3rem ;
     }
 
 }
