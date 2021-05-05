@@ -13,7 +13,6 @@
     text-wrap: wrap ;
     transform: scale(0);
     transition: .4s ease-in-out ;
-    transition-delay: .2
 }
 .animation-profile {
   transform: scale(1) ;
