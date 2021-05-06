@@ -27,7 +27,7 @@ export default function App() {
 
 				<Route path='/user/:userId' >
 					<Navbar />
-					<UserProfile setHidden={setHidden} hiddenState={hidden} />
+					<UserProfile setHidden={setHidden}  />
 				</Route>
 
 				<Route path='/' >

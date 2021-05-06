@@ -15,7 +15,7 @@ import { getPostComments } from '../fetch'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 
-function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
+function PostProfile({ postFocus , setPostFocus , comments , newUser , home , setHidden }) {
     const [ comment , setComment ] = useState('') ;
     const [ postComments , setPostComments ] = useState([]) ;
     const [ reload , setReload ] = useState(false) ;
@@ -71,12 +71,16 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home }) {
         setAnimation(false)
       }
     }, [postFocus])
+    const onClose = () => {
+      setHidden(false) ;
+      setPostFocus(null);
+    }
     console.log('comments in post profile' , comments) ;
     console.log('comments in state post profile' , postComments )
     if ( postFocus ) {
         return (
         <div className={`post-profile ${animation && 'animation-profile'}`} >
-            <CloseIcon onClick={() => setPostFocus(null)} />
+            <CloseIcon onClick={() => onClose()} />
             <div className='post-profile-post'>
                 <img src={postFocus.image} alt={`${postFocus.text} image`} />
                 <div className='post-profile-post-comment-section' style={{backgroundColor: dark ? '#171717' : 'white' ,color: dark ? 'white' : 'black'}}>

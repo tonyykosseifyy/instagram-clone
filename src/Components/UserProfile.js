@@ -58,7 +58,8 @@ const UserProfile = ({setHidden}) => {
         setChosenIndex(null)
         setPostsComments([])
         setPosts([])
-        setPostFocus(null)
+        setPostFocus(null) ;
+        setHidden(false) ;
     }
     console.log(postsComments , 'post comment in state')
     useEffect(() => {
@@ -106,7 +107,7 @@ const UserProfile = ({setHidden}) => {
                 { user && !loading ?
 
                 <div className='user-profile-top'>
-                    <PostProfile newUser={newUser} postFocus={postFocus} setPostFocus={setPostFocus} comments={postsComments[chosenIndex]} />
+                    <PostProfile newUser={newUser} postFocus={postFocus} setHidden={setHidden} setPostFocus={setPostFocus} comments={postsComments[chosenIndex]} />
                     <Avatar className='user-profile-image' src={user.picture} alt={`${user.firstName} ${user.lastName} picture`}  />
                       <div className='user-top-info'>
                             <h1 style={{color: dark ? 'white' : '#535353'}}>{`${user.firstName}_${user.lastName}`} </h1>
@@ -173,7 +174,7 @@ export default UserProfile ;
 
 
 
-const PostContainerGrid = styled.div`
+export const PostContainerGrid = styled.div`
   display: grid ;
   grid-template-columns: repeat(3 , 1fr) ;
   grid-template-rows: ${(props) => `repeat(${postContainerFunction(props.postsLength)} , 220px)`};
