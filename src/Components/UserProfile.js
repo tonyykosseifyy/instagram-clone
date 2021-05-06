@@ -45,10 +45,7 @@ const UserProfile = ({setHidden}) => {
         }
         notification.open(args)
     }, [])
-    useEffect(() => {
-        getFullUserById( setUser , setError , userId , setLoading) ;
-        getUsersPostsById( setPosts , setPostsError , userId , setLoadingPosts)
-    },[userId])
+
     const onPostClick = (item , index) => {
         setPostFocus(item) ;
         setChosenIndex(index)
@@ -158,7 +155,12 @@ const UserProfile = ({setHidden}) => {
                             ))}
                         </PostContainerGrid>
                     </div>
-                ) : <PostSkeleton /> }
+                ) :
+                  <>
+                    <div className='user-profile-bar'></div>
+                    <PostSkeleton />
+                  </>
+          }
             </div>
         )}
 

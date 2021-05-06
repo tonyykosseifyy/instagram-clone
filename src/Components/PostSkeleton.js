@@ -8,7 +8,7 @@ function PostSkeleton() {
     return (
         <PostContainerGrid >
             { arr.map((item , index) => (
-                <Skeleton variant='rect' animation='wave' />
+                <Skeleton variant='rect' animation='wave' width='100%' height='100%' />
             ))}
         </PostContainerGrid>
     )

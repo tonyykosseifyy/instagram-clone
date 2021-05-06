@@ -1,21 +1,20 @@
-import React from 'react'
-import Skeleton from '@material-ui/lab/Skeleton' ;
+import React, { useState } from 'react'
+import {Skeleton} from 'antd' ;
 import './UserProfileSkeleton.css' ;
 
 export function UserProfileSkeleton() {
     let array = [1 , 2, 3 , 4] ;
+    const [ minWidth , setMinWidth ] = useState('55vw') ;
+    if (window.innerWidth <= 1070 && minWidth !=='100%' ) {
+      setMinWidth('100%')
+    }
     return (
-        <div className='user-skeleton-top'>
-            <Skeleton variant='circle' animation='wave' width={180} height={180} />
-            <div className='user-skeleton-right'>
-                <Skeleton variant='rect' animation='wave' width={530} height={55} />
-                <div className='user-skeleton-bottom'>
-                    { array.map(( item , index) => (
-                        <Skeleton variant='text' animation='wave' width={400} />    
-                    ))}
+        <div className='user-profile-top' style={{minWidth: minWidth}}>
+            <Skeleton.Avatar className='user-profile-image' active size='large'/>
+                <Skeleton.Button style={{width:'100%', marginTop:'40px', height: '30px'}} shape='square' active size='large' className='user-top-info' />
+                <div className='user-description'>
+                    <Skeleton paragraph={{rows: 4, width: '200px'}} active />
                 </div>
-            </div>
-
         </div>
     )
 } ;

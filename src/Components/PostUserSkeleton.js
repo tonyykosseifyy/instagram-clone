@@ -1,14 +1,27 @@
-import Skeleton from '@material-ui/lab/Skeleton' ;
-import React from 'react' ;
+import {Skeleton} from 'antd' ;
+import React, { useState , useEffect } from 'react' ;
+import { PostContainerGrid } from './UserProfile.js' ;
 
 function PostUserSkeleton() {
-    let arr = [ 1,2 , 3 ,4 , 5 ]
+    let arr = [ 1,2 , 3 ,4 , 5 ] ;
+    const [height , setHeight ] = useState(200) ;
+    useEffect(() => {
+      if (window.innerWidth > 1124 ) {
+        setHeight(220)
+      } else if ( 800 < window.innerWidth <= 1124) {
+        setHeight(190)
+      } else if ( 500 < window.innerWidth <= 800 ) {
+        setHeight(150)
+      } else if (window.innerWidth <= 500 ) {
+        setHeight(100)
+      }
+    },[])
     return (
-        <div style={{marginTop: '130px'}} className='user-profile-posts'>
+        <PostContainerGrid style={{width: '100%' , gridTemplateRows: `repeat(2 , ${height}px)`}}>
             { arr.map((item , index) => (
-                <Skeleton variant='rect' animation='wave' height={250} width={350}  />
+                <Skeleton.Image shape='square' active key={index} />
             ))}
-        </div>
+        </PostContainerGrid>
     )
 }
 

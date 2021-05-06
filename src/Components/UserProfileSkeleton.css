@@ -1,12 +1,7 @@
-.user-skeleton-top {
-    display: flex ;
-    align-items: flex-start ;
+.user-profile-top .ant-skeleton-element .ant-skeleton-avatar-lg {
+  width: 100% ;
+  height: inherit ;
 }
-
-.user-skeleton-right {
-    margin-left: 40px ;
-}
-
-.user-skeleton-bottom {
-    margin-top: 50px ;
+.user-profile .ant-skeleton-content .ant-skeleton-title {
+  display: none ;
 }
