@@ -8,9 +8,9 @@ function PostUserSkeleton() {
     useEffect(() => {
       if (window.innerWidth > 1124 ) {
         setHeight(220)
-      } else if ( 800 < window.innerWidth <= 1124) {
+      } else if ( window.innerWidth <= 1124 && window.innerWidth > 800 ) {
         setHeight(190)
-      } else if ( 500 < window.innerWidth <= 800 ) {
+      } else if ( window.innerWidth <= 800 && window.innerWidth > 500 ) {
         setHeight(150)
       } else if (window.innerWidth <= 500 ) {
         setHeight(100)

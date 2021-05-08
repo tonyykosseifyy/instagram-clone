@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade' ;
 import PostProfile from './PostProfile' ;
 
 
-function Body() {
+function Body({setHidden}) {
     const dark = useSelector(state => state.darkTheme) ;
     const [ posts , setPosts ] = useState([]) ;
     const [ error , setError ] = useState(false) ;
@@ -26,12 +26,12 @@ function Body() {
 
     return (
         <div className='body' style={{background : dark ? '#171717' : '#fafafa' , color: dark ? 'white' : 'black'}}>
-            <PostProfile postFocus={postFocus} setPostFocus={setPostFocus} home newUser={newUser} />
+            <PostProfile postFocus={postFocus} setPostFocus={setPostFocus} setHidden={setHidden} home newUser={newUser} />
             <main className='main-body'>
                { !error ?
                    (!loading ) ?
                     posts.map((item , index) => (
-                        <Post key={index} post={item} setPostFocus={setPostFocus} />
+                        <Post key={index} post={item} setPostFocus={setPostFocus} setHidden={setHidden} />
                     ))
                    :
                     array.map((item , index) => (

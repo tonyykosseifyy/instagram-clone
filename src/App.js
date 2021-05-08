@@ -32,7 +32,7 @@ export default function App() {
 
 				<Route path='/' >
 					<Navbar />
-					<Body />
+					<Body setHidden={setHidden} />
 				</Route>
 
 			</Switch>

@@ -6,7 +6,7 @@ export function UserProfileSkeleton() {
     let array = [1 , 2, 3 , 4] ;
     const [ minWidth , setMinWidth ] = useState('55vw') ;
     if (window.innerWidth <= 1070 && minWidth !=='100%' ) {
-      setMinWidth('100%')
+      setMinWidth('100%') ;
     }
     return (
         <div className='user-profile-top' style={{minWidth: minWidth}}>

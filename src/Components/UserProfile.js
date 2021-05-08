@@ -38,6 +38,10 @@ const UserProfile = ({setHidden}) => {
     const [ loadingPosts , setLoadingPosts ] = useState(true) ;
     const [ postContainer , setPostContainer ] = useState([]) ;
     useEffect(() => {
+        getFullUserById( setUser , setError , userId , setLoading) ;
+        getUsersPostsById( setPosts , setPostsError , userId , setLoadingPosts)
+    },[userId])
+    useEffect(() => {
         const args = {
             message: 'New notification' ,
             description: 'Feel free to click on a post to add a comment' ,

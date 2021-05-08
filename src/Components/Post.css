@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     object-fit: contain;
-    max-height: 90vh;
+    max-height: 85vh;
 }
 
 @media screen and (max-width: 600px) {

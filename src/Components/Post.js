@@ -10,10 +10,16 @@ import DeleteIcon from '@material-ui/icons/Delete' ;
 import FavoriteIcon from '@material-ui/icons/Favorite' ;
 import { IconButton } from "@material-ui/core";
 import { FaRegComment } from 'react-icons/fa' ;
+import { useSelector } from 'react-redux' ;
 
-function Post({ post , setPostFocus }) {
+
+function Post({ post , setPostFocus , setHidden}) {
+  const dark = useSelector(state => state.darkTheme ) ;
   const [ ps , setPs ] = useState(false) ;
-
+  const handleComment = () => {
+    setHidden(true) ;
+    setPostFocus(post) ;
+  }
     if ( post ) {
     return (
         <div className='post' >
@@ -25,7 +31,7 @@ function Post({ post , setPostFocus }) {
                     </Link>
                 </strong>
             </PostOwner>
-            <img src={post.image} alt={`${post.owner.firstName} ${post.owner.lastName} picture`} />
+            <img style={{backgroundColor: dark && '#171717'}} src={post.image} alt={`${post.owner.firstName} ${post.owner.lastName} picture`} />
             <PostInfo>
                 <PostOption >
                     <PostOwner>
@@ -33,7 +39,7 @@ function Post({ post , setPostFocus }) {
                             <FavoriteIcon />
                         </IconButton>
 
-                        <IconButton onClick={() => setPostFocus(post)} >
+                        <IconButton onClick={() => handleComment()} >
                             <FaRegComment />
                         </IconButton>
                     </PostOwner>
