@@ -124,7 +124,8 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
                     <div className='post-profile-bar' style={{margin: '10px -10px '}}></div>
                     <div className='post-profile-options'>
                         <div style={{ color: dark ? 'white' : 'black'}}>
-                            {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'} style={{color: 'inherit'}} onClick={() => setLiked(!liked)}/> }
+                            {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'}
+                             style={{color: 'inherit'}} onClick={() => setLiked(!liked)}/> }
                             <FaRegComment onClick={() => textInput.current.focus()} style={{width:'1.5em' , height:'1.5em',marginLeft:'8px'}}  />
                         </div>
                         <BookmarkBorderIcon />
