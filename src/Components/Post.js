@@ -41,8 +41,8 @@ function Post({ post , setPostFocus , setHidden}) {
             <img style={{backgroundColor: dark && '#171717'}} src={post.image} alt={`${post.owner.firstName} ${post.owner.lastName} picture`} />
             <PostInfo>
                 <PostOption >
-                    <PostOwner>
-                        {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'} style={{color:'black'}} onClick={() => setLiked(!liked)}/> }
+                    <PostOwner style={{color: dark ? 'white' : 'black'}}>
+                        {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'} style={{color: 'inherit'}} onClick={() => setLiked(!liked)}/> }
                         <FaRegComment onClick={() => handleComment()} style={{width:'1.5em' , height:'1.5em',marginLeft:'8px'}} />
                     </PostOwner>
                       <BookmarkBorderIcon />

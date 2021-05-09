@@ -1,7 +1,7 @@
 const initialState = {
-    darkTheme : false , 
+    darkTheme : false ,
     user: {
-        displayName : 'tonyy' , 
+        displayName : '' , 
         email: null ,
         photoURL : null
     }
@@ -10,14 +10,14 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'TOGGLE_THEME' : 
+        case 'TOGGLE_THEME' :
             return {
-                ...state , 
+                ...state ,
                 darkTheme: !state.darkTheme
             }
-        case 'SIGN_IN' : 
+        case 'SIGN_IN' :
             return {
-                ...state , 
+                ...state ,
                 user : {
                     displayName: action.payload.displayName ,
                     email: action.payload.email ,

@@ -22,9 +22,10 @@
   animation-name: liked ;
   animation-iteration-count: 1 ;
   animation-timing-function: ease-in-out ;
-  color: #ED4956 ;
-  animation-duration: .4s 
+  animation-duration: .4s ;
+      color: #ED4956 ;
 }
+
 
 @keyframes liked {
   0% {

@@ -21,7 +21,9 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
     const [ reload , setReload ] = useState(false) ;
     const [ error , setError ] = useState(false)
     const [ loading , setLoading ] = useState(false) ;
-    const [ animation , setAnimation ] = useState(false)
+    const [ animation , setAnimation ] = useState(false) ;
+    const [ liked , setLiked ] = useState(false) ;
+    const [ notFirstMount , setNotFirstMount ] = useState(false) ;
     useEffect(() => {
         if ( !home ) {
             setPostComments(comments)
@@ -75,6 +77,11 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
       setHidden(false) ;
       setPostFocus(null);
     }
+    useEffect(() => {
+      if (liked && !notFirstMount) {
+          setNotFirstMount(true) ;
+      }
+    }, [ liked ])
     console.log('comments in post profile' , comments) ;
     console.log('comments in state post profile' , postComments )
     if ( postFocus ) {
@@ -82,6 +89,7 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
         <div className={`post-profile ${animation && 'animation-profile'}`} >
             <CloseIcon onClick={() => onClose()} />
             <div className='post-profile-post'>
+              { home && loading &&  <CircularProgress className='circular-loading'  /> }
                 <img src={postFocus.image} alt={`${postFocus.text} image`} />
                 <div className='post-profile-post-comment-section' style={{backgroundColor: dark ? '#171717' : 'white' ,color: dark ? 'white' : 'black'}}>
                     <div className='post-profile-user' >
@@ -96,7 +104,6 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
                                 <p style={{color: dark ? 'white' : 'black'}}><strong>{`${postFocus.owner.firstName}_${postFocus.owner.lastName}`}</strong>{postFocus.text.length > 100 ? `${postFocus.text.slice(0 , 100)}...` : postFocus.text }</p>
                                 <span>{postFocus.publishDate.slice(0 , 10 )}</span>
                             </div>
-                            { home && loading &&  <CircularProgress  /> }
                         </div>
                         { postComments?.length > 0 ? postComments.map((item , index) => (
                             <div key={index} className='post-profile-comment'>
@@ -116,18 +123,11 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
                     </div>
                     <div className='post-profile-bar' style={{margin: '10px -10px '}}></div>
                     <div className='post-profile-options'>
-                    <div>
-                        <IconButton>
-                            <FavoriteBorderIcon style={{color: 'red'}} />
-                        </IconButton>
-
-                        <IconButton onClick={() => textInput.current.focus()} >
-                            <FaRegComment />
-                        </IconButton>
+                        <div style={{ color: dark ? 'white' : 'black'}}>
+                            {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'} style={{color: 'inherit'}} onClick={() => setLiked(!liked)}/> }
+                            <FaRegComment onClick={() => textInput.current.focus()} style={{width:'1.5em' , height:'1.5em',marginLeft:'8px'}}  />
                         </div>
-                        <IconButton>
-                            <BookmarkBorderIcon />
-                        </IconButton>
+                        <BookmarkBorderIcon />
                     </div>
                     <div className='post-profile-bar' style={{margin: '10px -10px ' ,marginBottom: '0'}}></div>
 

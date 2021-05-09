@@ -21,7 +21,8 @@ function Body({setHidden}) {
     }, [])
     console.log(posts , 'postsss') ;
     const newUser = () => {
-        setPostFocus(null)
+        setPostFocus(null) ;
+        setHidden(false) ;
     }
 
     return (
