@@ -5,9 +5,9 @@ import styled from 'styled-components' ;
 import Avatar from '@material-ui/core/Avatar' ;
 import { Link } from 'react-router-dom' ;
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder' ;
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder' ;
 import DeleteIcon from '@material-ui/icons/Delete' ;
 import FavoriteIcon from '@material-ui/icons/Favorite' ;
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { IconButton } from "@material-ui/core";
 import { FaRegComment } from 'react-icons/fa' ;
 import { useSelector } from 'react-redux' ;
@@ -16,10 +16,17 @@ import { useSelector } from 'react-redux' ;
 function Post({ post , setPostFocus , setHidden}) {
   const dark = useSelector(state => state.darkTheme ) ;
   const [ ps , setPs ] = useState(false) ;
+  const [ liked , setLiked ] = useState(false) ;
+  const [ notFirstMount , setNotFirstMount ] = useState(false) ;
   const handleComment = () => {
     setHidden(true) ;
     setPostFocus(post) ;
   }
+  useEffect(() => {
+    if (liked && !notFirstMount) {
+        setNotFirstMount(true) ;
+    }
+  }, [ liked ])
     if ( post ) {
     return (
         <div className='post' >
@@ -35,21 +42,13 @@ function Post({ post , setPostFocus , setHidden}) {
             <PostInfo>
                 <PostOption >
                     <PostOwner>
-                        <IconButton>
-                            <FavoriteIcon />
-                        </IconButton>
-
-                        <IconButton onClick={() => handleComment()} >
-                            <FaRegComment />
-                        </IconButton>
+                        {liked ? <FavoriteIcon onClick={() => setLiked(!liked)} className='like' /> :<FavoriteBorderIcon className={notFirstMount && 'like'} style={{color:'black'}} onClick={() => setLiked(!liked)}/> }
+                        <FaRegComment onClick={() => handleComment()} style={{width:'1.5em' , height:'1.5em',marginLeft:'8px'}} />
                     </PostOwner>
-
-                    <IconButton>
-                        <BookmarkBorderIcon />
-                    </IconButton>
+                      <BookmarkBorderIcon />
                 </PostOption>
 
-                <strong>{post.likes} likes</strong>
+                <strong>{liked ? post.likes + 1 : post.likes } likes</strong>
             </PostInfo>
         </div>
     )}
@@ -67,7 +66,10 @@ const PostOwner = styled.div`
         margin-left: 12px ;
     }
     & > strong:hover {
-        text-decoration: underline ;
+        text-decoration: underline ;2
+    }
+    & > svg {
+      cursor: pointer ;
     }
 `
 
