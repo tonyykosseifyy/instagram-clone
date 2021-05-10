@@ -34,7 +34,7 @@ export default function App() {
 
 				<Route path='/account' >
 					<Navbar />
-					<Account />
+					<Account setHidden={setHidden} />
 				</Route>
 
 				<Route path='/' >

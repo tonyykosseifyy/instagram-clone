@@ -29,10 +29,10 @@ const Navbar = () => {
     <nav style={{ background: dark && '#000000' , color: dark && 'white'}} >
       <div className="navbar-first">
         <img
-		  src={ 
-		!dark ? 
-		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXm8H7K0a-4nYAwKUu57KI463WaS6BGR7NlFQT5jx05FUdK36UdWbyVyhJaQp6hZAMafM&usqp=CAU"  
-		: 
+		  src={
+		!dark ?
+		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXm8H7K0a-4nYAwKUu57KI463WaS6BGR7NlFQT5jx05FUdK36UdWbyVyhJaQp6hZAMafM&usqp=CAU"
+		:
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRerz5KY5miu__bFIeYn_URek2mLMZC44nCzLY48JpC5c5qaUBwvZ7DYWiJs9-k_viaBQA&usqp=CAU' }
           alt="instagram logo"
         />
@@ -89,18 +89,17 @@ const Navbar = () => {
 			<IconButton>
 				<FavoriteBorderIcon />
 			</IconButton>
-				
+
 			<IconButton onClick={() => dispatch(toggleTheme())} >
 				<Brightness4Icon />
 			</IconButton>
-
-      {user.photoURL ? 
       
+      <Link to='/account'>
       <IconButton className='avatar'>
-        <Avatar className='avatar' src={user.photoURL} alt={user?.displayName} />
-      </IconButton> 
-      : null}
-            
+        <Avatar className='avatar' src={user.photoURL ? user.photoURL : '' } alt={user?.displayName} />
+      </IconButton>
+</Link>
+
         </div>
       </div>
     </nav>

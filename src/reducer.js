@@ -1,7 +1,7 @@
 const initialState = {
     darkTheme : false ,
     user: {
-        displayName : '' , 
+        displayName : 'Tony kosseify' , 
         email: null ,
         photoURL : null
     }
