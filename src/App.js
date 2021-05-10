@@ -9,6 +9,8 @@ import './styles.css' ;
 import { useSelector } from 'react-redux' ;
 import { Redirect } from 'react-router-dom'
 import UserProfile from './Components/UserProfile' ;
+import Account from './Components/Account' ;
+
 
 export default function App() {
 	const [ hidden , setHidden ] = useState(false) ;
@@ -28,6 +30,11 @@ export default function App() {
 				<Route path='/user/:userId' >
 					<Navbar />
 					<UserProfile setHidden={setHidden}  />
+				</Route>
+
+				<Route path='/account' >
+					<Navbar />
+					<Account />
 				</Route>
 
 				<Route path='/' >
