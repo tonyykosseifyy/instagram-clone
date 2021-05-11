@@ -29,7 +29,6 @@ const Account = ({ setHidden }) => {
 
   return (
     <div className='user-profile' style={{ background : dark ?  '#171717' : 'inherit' , color: dark ? 'white' : 'inherit'}}>
-      <div className=''></div>
         <div className='user-profile-top'>
             <PostProfile newUser={newUser} postFocus={postFocus} setHidden={setHidden} setPostFocus={setPostFocus} comments={null} />
             <div className='user-profile-image' style={{position: 'relative'}}>
