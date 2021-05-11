@@ -11,6 +11,7 @@ import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { IconButton } from "@material-ui/core";
+import { Input } from 'antd';
 
 const Account = ({ setHidden }) => {
   const imageUpload = createRef(null) ;
@@ -46,12 +47,12 @@ const Account = ({ setHidden }) => {
                         </MuiButton>
                     </div>
               </div>
-              <div className='user-description'>
+              <div className='user-description account-description'>
                     <ul>
-                        {user.gender && <li key={user?.gender}><strong>gender </strong> {user.gender}</li>}
-                        {user.phone && <li key={user?.phone}><strong>phone number </strong>{user.phone}</li>}
-                        {user.email && <li key={user?.email}><strong>email </strong>{user.email}</li>}
-                        {(location?.country || location?.state || location?.city ) && <li key={user?.location.country}><strong>location </strong>{user.location.country} {user.location.city} {user.location.state}</li>}
+                        <li><strong>gender </strong> </li>
+                        <li><strong>phone number </strong> <Input /> </li>
+                        <li><strong>email </strong> <Input /> </li>
+                        <li><strong>location </strong> <Input />  </li>
                     </ul>
               </div>
 

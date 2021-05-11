@@ -26,3 +26,14 @@
 .account-input svg:hover {
   transform : scale(1.09)
 }
+.account-description > ul > li {
+  display:flex ;
+  align-items: center ;
+  width: 100% ;
+}
+.account-description > ul > li > strong {
+  width: 40% ;
+}
+.account-description > ul > li > input {
+  flex: 100 ;
+}
