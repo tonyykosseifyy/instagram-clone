@@ -20,6 +20,20 @@ const Account = ({ setHidden }) => {
   const user = useSelector(state => state.user) ;
   const { location } = user ;
   const dark = useSelector(state => state.darkTheme) ;
+  const [userDesc , setUserDesc ] = useState({
+    gender : '' ,
+    phoneNumber: '',
+    email: user.email ,
+    location: ''
+  })
+  const inputChange = (e) => {
+    const { name , value } = e.target ;
+    setUserDesc({
+      ...userDesc ,
+      [name] : value
+    })
+    console.log(userDesc , name , value)
+  }
   const newUser = () => {
       setPostFocus(null) ;
       setHidden(false) ;
@@ -50,10 +64,11 @@ const Account = ({ setHidden }) => {
               <div className='user-description account-description'>
                     <ul>
                         <li><strong>gender </strong> </li>
-                        <li><strong>phone number </strong> <Input /> </li>
-                        <li><strong>email </strong> <Input /> </li>
-                        <li><strong>location </strong> <Input />  </li>
+                        <li><strong>phone number </strong> <Input value={userDesc.phoneNumber} onChange={(e) => inputChange(e)} name='phoneNumber' /> </li>
+                        <li><strong>email </strong> <Input type='email' value={userDesc.email} onChange={(e) => inputChange(e)} name='email' /> </li>
+                        <li><strong>location </strong> <Input value={userDesc.location} onChange={(e) => inputChange(e)} name='location' />  </li>
                     </ul>
+                    <MuiButton>Save changes </MuiButton>
               </div>
 
         </div>

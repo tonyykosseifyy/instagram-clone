@@ -36,4 +36,11 @@
 }
 .account-description > ul > li > input {
   flex: 100 ;
+  background-color: transparent ;
+  border-color: transparent ;
+  transition : .3s ease-out ;
+  border-width: 2px ;
+}
+.account-description > ul > li:hover input {
+  border-color: #EBEBEB ;
 }
