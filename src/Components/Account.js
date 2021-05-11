@@ -29,7 +29,7 @@ const Account = ({ setHidden }) => {
 
   return (
     <div className='user-profile' style={{ background : dark ?  '#171717' : 'inherit' , color: dark ? 'white' : 'inherit'}}>
-
+      <div className=''></div>
         <div className='user-profile-top'>
             <PostProfile newUser={newUser} postFocus={postFocus} setHidden={setHidden} setPostFocus={setPostFocus} comments={null} />
             <div className='user-profile-image' style={{position: 'relative'}}>
@@ -37,8 +37,8 @@ const Account = ({ setHidden }) => {
                 <div className='account-input'>
                   <input type="file" onChange={(e) => handleChange(e) } ref={imageUpload} />
                     <PhotoCamera onClick={() => imageUpload.current.click()} />
-              </div>
-          </div>
+                </div>
+            </div>
               <div className='user-top-info'>
                     <h1 style={{color: dark ? 'white' : '#535353'}}>{user.displayName}</h1>
                     <div className='account-buttons' >
