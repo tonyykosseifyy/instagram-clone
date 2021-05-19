@@ -26,6 +26,7 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
     const [ liked , setLiked ] = useState(false) ;
     const [ notFirstMount , setNotFirstMount ] = useState(false) ;
     const [ openEmogi  , setOpenEmogi ] = useState(false) ;
+    
     const onEmojiClick = (event, emojiObject) => {
         setChosenEmoji(emojiObject);
     };
@@ -138,7 +139,7 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
                     <div className='post-profile-bar' style={{margin: '10px -10px ' ,marginBottom: '0'}}></div>
 
                     <form className='form-input' onSubmit={(e) => handleSubmit(e)}>
-                      <IconButton style={{margin :'0 10px'}} onClick={() => setOpenEmogi(!openEmogi)} >
+                      <IconButton style={{margin :'0 10px', color: dark ? 'white' : 'black'}} onClick={() => setOpenEmogi(!openEmogi)} >
                         <InsertEmoticonIcon style={{height: '30px' , width: '30px'}} />
                       </IconButton>
                       <Picker onEmojiClick={onEmojiClick} pickerStyle={{transform: openEmogi && 'scale(1)' }} />

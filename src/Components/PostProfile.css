@@ -14,7 +14,7 @@
     transform: scale(0);
     transition: .4s ease-in-out ;
 }
-.emoji-picker-react {
+form aside.emoji-picker-react {
   transition: .3s ease-out ;
   transform: scale(0) ;
   position: absolute ;
@@ -55,6 +55,7 @@
     padding-bottom: 0 ;
     justify-content: space-evenly ;
     max-width: 35vw ;
+    max-height: 85vh ;
 }
 
 .post-profile-bar {
