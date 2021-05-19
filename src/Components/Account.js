@@ -1,7 +1,7 @@
 import React, { useState , createRef } from 'react' ;
 import './Account.css' ;
 import styled from 'styled-components' ;
-import { useSelector } from 'react-redux' ;
+import { useSelector , useDispatch } from 'react-redux' ;
 import PostProfile from './PostProfile' ;
 import Avatar from '@material-ui/core/Avatar' ;
 import MuiButton from '@material-ui/core/Button' ;
@@ -12,8 +12,11 @@ import { Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { IconButton } from "@material-ui/core";
 import { Input } from 'antd';
+import { editAccount } from '../actions.js' ;
+
 
 const Account = ({ setHidden }) => {
+  const dispatch = useDispatch() ;
   const imageUpload = createRef(null) ;
   const [ postFocus , setPostFocus ] = useState(null) ;
   const [ file , setFile ] = useState() ;
@@ -68,7 +71,7 @@ const Account = ({ setHidden }) => {
                         <li><strong>email </strong> <Input type='email' value={userDesc.email} onChange={(e) => inputChange(e)} name='email' /> </li>
                         <li><strong>location </strong> <Input value={userDesc.location} onChange={(e) => inputChange(e)} name='location' />  </li>
                     </ul>
-                    <MuiButton>Save changes </MuiButton>
+                    <MuiButton>Save changes</MuiButton>
               </div>
 
         </div>

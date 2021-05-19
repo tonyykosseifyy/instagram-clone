@@ -78,11 +78,11 @@ const Navbar = () => {
           />
         </form>
         <div className="nav-links" style={{ fill : dark ? 'white' : 'black' , background: dark ? '#000000' : 'white' }}  >
-			<IconButton>
-        <Link to='/'>
+      <Link to='/'>
+      <IconButton>
 				  <HomeIcon />
-        </Link>
-			</IconButton>
+      </IconButton>
+    </Link>
 			<IconButton>
 				<ExploreOutlinedIcon />
 			</IconButton>
@@ -93,7 +93,7 @@ const Navbar = () => {
 			<IconButton onClick={() => dispatch(toggleTheme())} >
 				<Brightness4Icon />
 			</IconButton>
-      
+
       <Link to='/account'>
       <IconButton className='avatar'>
         <Avatar className='avatar' src={user.photoURL ? user.photoURL : '' } alt={user?.displayName} />
