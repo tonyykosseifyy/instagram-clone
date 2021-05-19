@@ -45,7 +45,7 @@ const UserProfile = ({setHidden}) => {
         const args = {
             message: 'New notification' ,
             description: 'Feel free to click on a post to add a comment' ,
-            duration: 4.5
+            duration: 6
         }
         notification.open(args)
     }, [])

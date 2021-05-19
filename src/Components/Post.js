@@ -29,7 +29,7 @@ function Post({ post , setPostFocus , setHidden}) {
   }, [ liked ])
     if ( post ) {
     return (
-        <div className='post' >
+        <div className='post' style={{borderColor: dark && '#545454'}} >
             <PostOwner padding='12px 10px'>
                 <Avatar src={post?.owner.picture} />
                 <strong>

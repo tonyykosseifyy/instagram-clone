@@ -13,9 +13,10 @@ import { FaRegComment } from 'react-icons/fa' ;
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon' ;
 import { getPostComments } from '../fetch'
 import CircularProgress from '@material-ui/core/CircularProgress'
-
+import Picker from 'emoji-picker-react';
 
 function PostProfile({ postFocus , setPostFocus , comments , newUser , home , setHidden }) {
+  const [chosenEmoji, setChosenEmoji] = useState(null);
     const [ comment , setComment ] = useState('') ;
     const [ postComments , setPostComments ] = useState([]) ;
     const [ reload , setReload ] = useState(false) ;
@@ -24,6 +25,10 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
     const [ animation , setAnimation ] = useState(false) ;
     const [ liked , setLiked ] = useState(false) ;
     const [ notFirstMount , setNotFirstMount ] = useState(false) ;
+    const [ openEmogi  , setOpenEmogi ] = useState(false) ;
+    const onEmojiClick = (event, emojiObject) => {
+        setChosenEmoji(emojiObject);
+    };
     useEffect(() => {
         if ( !home ) {
             setPostComments(comments)
@@ -133,7 +138,10 @@ function PostProfile({ postFocus , setPostFocus , comments , newUser , home , se
                     <div className='post-profile-bar' style={{margin: '10px -10px ' ,marginBottom: '0'}}></div>
 
                     <form className='form-input' onSubmit={(e) => handleSubmit(e)}>
-                        <InsertEmoticonIcon style={{height: '30px' , width: '30px' , margin :'0 10px '}} />
+                      <IconButton style={{margin :'0 10px'}} onClick={() => setOpenEmogi(!openEmogi)} >
+                        <InsertEmoticonIcon style={{height: '30px' , width: '30px'}} />
+                      </IconButton>
+                      <Picker onEmojiClick={onEmojiClick} pickerStyle={{transform: openEmogi && 'scale(1)' }} />
                         <input ref={textInput} style={{background: dark ? 'transparent' : 'inherit',color: dark ? 'white' : 'black'}} type='text' placeholder='Add a comment...' value={comment} onChange={(e) => setComment(e.target.value)} />
                         <button style={{opacity: comment.trim() ? '1' : '.35', cursor: !comment.trim() ? 'not-allowed':'' }}  >Post</button>
                     </form>
