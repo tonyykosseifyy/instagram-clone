@@ -32,15 +32,24 @@
   width: 100% ;
 }
 .account-description > ul > li > strong {
-  width: 40% ;
+  width: 30% ;
 }
 .account-description > ul > li > input {
   flex: 100 ;
   background-color: transparent ;
   border-color: transparent ;
   transition : .3s ease-out ;
-  border-width: 2px ;
+  border-width: 2px !important ;
 }
 .account-description > ul > li:hover input {
   border-color: #EBEBEB ;
+}
+.account-description > ul > li span {
+  color: #C34034 ;
+  margin-left: 15px ;
+  font-size: 14px ;
+  font-weight: bolder ;
+}
+.account-description {
+  min-width: 30vw
 }
