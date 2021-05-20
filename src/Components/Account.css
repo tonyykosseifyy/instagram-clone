@@ -53,3 +53,15 @@
 .account-description {
   min-width: 30vw
 }
+.account-description > ul > li .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: transparent ;
+  border-color: transparent ;
+  transition : .3s ease-out ;
+  border-width: 2px !important ;
+}
+.account-description > ul > li:hover .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: #EBEBEB ;
+}
+.account-description > ul > li .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  color: inherit ;
+}
