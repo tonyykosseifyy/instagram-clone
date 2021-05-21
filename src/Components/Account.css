@@ -1,0 +1,67 @@
+.user-top-info > div.account-buttons .MuiButton-root {
+  width: auto ;
+}
+.account-input {
+  width: 50px ;
+  height: 50px ;
+  color: white ;
+  overflow: hidden ;
+  position: absolute;
+  bottom: 0 ;
+  right: 0 ;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.account-input > input {
+  opacity: 0 ;
+}
+.account-input svg {
+  color: #3AACF7 ;
+  cursor: pointer ;
+  transition: .3s ease-in-out ;
+  width: 1.5em ;
+  height: 1.5em
+}
+.account-input svg:hover {
+  transform : scale(1.09)
+}
+.account-description > ul > li {
+  display:flex ;
+  align-items: center ;
+  width: 100% ;
+}
+.account-description > ul > li > strong {
+  width: 30% ;
+}
+.account-description > ul > li > input {
+  flex: 100 ;
+  background-color: transparent ;
+  border-color: transparent ;
+  transition : .3s ease-out ;
+  border-width: 2px !important ;
+}
+.account-description > ul > li:hover input {
+  border-color: #EBEBEB ;
+}
+.account-description > ul > li span {
+  color: #C34034 ;
+  margin-left: 15px ;
+  font-size: 14px ;
+  font-weight: bolder ;
+}
+.account-description {
+  min-width: 30vw
+}
+.account-description > ul > li .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: transparent ;
+  border-color: transparent ;
+  transition : .3s ease-out ;
+  border-width: 2px !important ;
+}
+.account-description > ul > li:hover .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: #EBEBEB ;
+}
+.account-description > ul > li .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  color: inherit ;
+}

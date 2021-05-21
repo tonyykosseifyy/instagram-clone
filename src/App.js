@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react' ;
+import "./styles.css";
+import Navbar from './Components/Navbar' ;
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom' ;
+import './styles.css' ;
+import Body from './Components/Body' ;
+import Login from './Components/Login' ;
+import './styles.css' ;
+import { useSelector } from 'react-redux' ;
+import { Redirect } from 'react-router-dom'
+import UserProfile from './Components/UserProfile' ;
+import Account from './Components/Account' ;
 
-function App() {
+
+export default function App() {
+	const [ hidden , setHidden ] = useState(false) ;
+	const dark = useSelector(state  => state.darkTheme )
+	const userDisplayName = useSelector(state => state.user.displayName) ;
+	console.log(userDisplayName , 'user in App ')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+		<div className='app' style={{background : dark && 'black' , height: hidden && '100vh' , overflow: hidden && 'hidden'}}>
+			<Switch>
 
-export default App;
+				<Route path='/sign-in' >
+					<Login />
+				</Route>
+				{ /*userDisplayName ? null : <Redirect to='/sign-in' /> */}
+
+				<Route path='/user/:userId' >
+					<Navbar />
+					<UserProfile setHidden={setHidden}  />
+				</Route>
+
+				<Route path='/account' >
+					<Navbar />
+					<Account setHidden={setHidden} />
+				</Route>
+
+				<Route path='/' >
+					<Navbar />
+					<Body setHidden={setHidden} />
+				</Route>
+
+			</Switch>
+		</div>
+    </Router>
+  )
+} ;

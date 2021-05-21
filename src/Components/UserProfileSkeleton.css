@@ -1,0 +1,7 @@
+.user-profile-top .ant-skeleton-element .ant-skeleton-avatar-lg {
+  width: 100% ;
+  height: inherit ;
+}
+.user-profile .ant-skeleton-content .ant-skeleton-title {
+  display: none ;
+}

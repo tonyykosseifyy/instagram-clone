@@ -1,0 +1,109 @@
+.login {
+    padding: 0vh 10vw ;
+    display: flex ;
+    justify-content: center;
+}
+
+.login-left {
+    background-image: url('https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png') ;
+    height: 618px ;
+    width: 410px; 
+    position: relative ;
+    margin-left: -40px ;
+}
+.login-images {
+    position: absolute ;
+    height: 440px;
+    width: 246px;
+    top: 90px;
+    left: 148px;
+}
+.login-images > img {
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover ;
+    position: absolute ;
+    top: 0 ;
+    right:  0 ;
+    transition: 1.4s ease-in-out ;
+    -webkit-transition: 1.4s ease-in-out ;
+    -moz-transition: 1.4s ease-in-out ;
+    -ms-transition: 1.4s ease-in-out ;
+    -o-transition: 1.4s ease-in-out ;
+    transition-delay: .4s ;
+}
+.login-right {
+    background-color: white ;
+    border: 1px solid #DBDBDB ;
+    margin: 40px 80px ; 
+    padding: 10px 40px ;
+    min-height: 80vh  ;
+    position: relative ;
+    display: flex ;
+    flex-direction: column; 
+    justify-content: space-evenly ;
+    align-items: center ;
+}
+.login-right > img {
+    width: 240px ;
+    height: 100px ;
+    object-fit: contain ;
+}
+.login-right > button {
+    border: none ;
+    outline: none ;
+    transition: .3s ease-out ;
+    -webkit-transition: .3s ease-out ;
+    -moz-transition: .3s ease-out ;
+    -ms-transition: .3s ease-out ;
+    -o-transition: .3s ease-out ;
+    font-weight: 500;
+    height: auto;
+    line-height: normal;
+    width: 195px;
+    min-height: 40px;
+    padding: 8px 16px;
+    margin: 0 auto ;
+    cursor: pointer;
+}
+.login-right > button:hover {
+    box-shadow: 2px 2px 10px rgb(165, 163, 163) ;
+}
+.firebaseui-list-item {
+    transition: .3s ease-out ;
+}
+.firebaseui-list-item:hover {
+    box-shadow: 2px 2px 10px rgb(165, 163, 163) ;
+}
+.login-bar {
+    display: flex ;
+    align-items:center ;
+    width: 100% ;
+    margin: 0 auto ; 
+    max-width: 240px ;
+    color: #8e8e8e ;
+}
+.login-bar > span {
+    flex: 100 ;
+    display: block ;
+    height: .5px ;
+    background: #DBDBDB ;
+    margin: 0 15px ;
+}
+@media screen and (max-width: 1086px) {
+    .login {
+        padding: 0 ;
+    }
+    .login-left {
+        display: none ;
+    }
+    .login-right {
+        width: 100vw ;
+        height: 100vh ;
+        margin: auto auto ;
+    }
+    .login-bar > span {
+        margin: 0 20px ;
+    }
+}
+
